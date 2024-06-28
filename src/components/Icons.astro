@@ -1,0 +1,47 @@
+---
+import GithubIcon from "./icons/Github.astro"
+import LinkedinIcon from "./icons/Linkedin.astro"
+import MediumIcon from "./icons/Medium.astro"
+import MailIcon from "./icons/Mail.astro"
+
+
+const { iconClass, sectionClass } = Astro.props
+---
+
+<section class=`${sectionClass}`>
+    <a
+        href="https://github.com/BryanSoria593"
+        target="_blank"
+        class="github-icon text-slate-200 transition duration-100"
+        aria-label="Github"
+    >
+        <GithubIcon class=`github-icon ${iconClass}` />
+    </a>
+
+    <a
+        href="https://linkedin.com/in/bryan-soriam/"
+        target="_blank"
+        class="linkedin-icon text-blue-400"
+        aria-label="Linkedin"
+    >
+        <LinkedinIcon class=`linkedin-icon ${iconClass}` />
+    </a>
+
+    <a
+        href="https://medium.com/@Zansoriam"
+        target="_blank"
+        class="mt-1 medium-icon text-green-400"
+        aria-label="Medium"
+    >
+        <MediumIcon class=`medium-icon ${iconClass}` />
+    </a>
+
+    <a
+        href="mailto:zansoriam@gmail.com"
+        target="_blank"
+        class="mt-1 mail-icon text-red-400"
+        aria-label="Mail"
+    >
+        <MailIcon class=`mail-icon ${iconClass}` />
+    </a>
+</section>

@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Menu from "../components/Menu.astro"
+import Projects from "../components/Projects.astro"
+import About from "../components/About.astro"
+import Experience from "../components/Experience.astro"
+import Articles from "../components/Articles.astro"
+import Contact from "../components/Contact.astro"
+---
+
+<Layout title="Home">
+	<section class="flex flex-col w-full px-4 mx-auto md:px-0 md:w-10/12">
+		<About />
+		<Experience />
+		<Projects />
+		<Articles />
+
+		<h2 
+			id="contactos"
+			class="text-3xl font-semibold text-white">
+			Contactos
+		</h2>
+
+		<Contact
+			sectionClass="flex justify-evenly items-center gap-4 mt-4"
+			iconClass="w-32 sm:w-24 transition-transform duration-200 hover:scale-110"
+		/>
+	</section>
+	<footer class="flex items-center justify-center m-10">
+		<Menu />
+	</footer>
+</Layout>

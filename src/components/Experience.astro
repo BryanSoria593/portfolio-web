@@ -1,0 +1,97 @@
+---
+const experiencies = [
+    {
+        title: "Desarrollador de software interno",
+        company: "Tinkin Tech Partner",
+        period: { start: "Oct 2023", end: "Nov 2023" },
+        description: [
+            "Implementación de NestJS y MongoDB.",
+            "Aplicación de metodología Scrum para mejorar la colaboración y eficiencia del equipo.",
+            "Uso de JIRA para la gestión y seguimiento de tareas y proyectos."
+        ],
+        bgColor: "bg-blue-700",
+    },
+    {
+        title: "Desarrollador de software",
+        company: "GAD La Libertad",
+        period: { start: "Nov 2022", end: "Ago 2023" },
+        description: [
+            "Desarrollo un algoritmo de detección de spam para el servicio de correo electrónico Zimbra utilizando Python y Machine Learning.",
+            "Desarrollo de una interfaz web con Angular/NgRx para visualizar datos y gestionar usuarios spammers.",
+            "Desarrollo de backend con Python/Flask y MongoDB para gestionar peticiones de la interfaz web.",
+            "Implementación de la metodología CSF de NIST.",
+            "Mejora de detección de correos spam, moviéndolos a la carpeta correspondiente de cada usuario.",
+            "Toma de decisiones basadas en estadísticas proporcionadas por la interfaz web.",
+        ],
+        bgColor: "bg-fuchsia-600",
+    },
+    {
+        title: "Pasante desarrollador web",
+        company: "GAD La Libertad",
+        period: { start: "Sep 2022", end: "Oct 2022" },
+        description: [
+            "Actualización de la página de roles para que los usuarios puedan ver su remuneración, aplicando PHP, JavaScript y SQL.",
+            "Creación de un formulario con PHP, JavaScript, Bootstrap y SQL para que los usuarios vean sus marcaciones de llegada y salida."
+        ],
+        bgColor: "bg-emerald-700",
+    },
+]
+---
+
+<div id="experiencia">
+    <h2 class="text-3xl font-semibold text-white">Experiencia</h2>
+
+    {
+        experiencies.map((experience) => (
+            <div class="relative pl-11 sm:pl-16 py-6 group w-full">
+                <div
+                    class={`
+                    flex flex-col sm:flex-row items-start
+                    mb-1 group-last:before:hidden before:absolute
+                    before:left-2 sm:before:left-0 before:h-full
+                    before:px-px before:bg-slate-300 
+                    before:ml-[1rem]
+                    sm:before:ml-[2rem]
+
+                    before:self-start before:-translate-x-1/2 
+                    before:translate-y-4 after:absolute after:left-2 
+                    sm:after:left-0 after:w-2 after:h-2
+                    after:bg-blue-950
+                    after:border-4 after:box-content
+                    after:rounded-full 
+                    after:ml-[1rem]
+                    sm:after:ml-[2rem]
+                    after:-translate-x-1/2 after:translate-y-3`}
+                />
+
+                <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-xl sm:text-3xl text-yellow-500">
+                        {experience.title}
+                    </h3>
+                    <h4 class="font-bold text-slate-200">
+                        {experience.company}
+                    </h4>
+                    <time
+                        class={`
+                            text-slate-100
+                            font-bold 
+                            flex flex-row items-center justify-center
+                            w-36 p-1
+                            ${experience.bgColor} rounded-full`}
+                    >
+                        <span class="text-xs">
+                            {experience.period.start} - {experience.period.end}
+                        </span>
+                    </time>
+                    <ul class="list-disc pl-5">
+                        {experience.description.map((desc) => (
+                            <li class="text-slate-300 w-full text-sm sm:text-base sm:w-11/12">
+                                {desc}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        ))
+    }
+</div>

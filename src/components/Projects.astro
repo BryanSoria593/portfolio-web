@@ -1,0 +1,493 @@
+---
+import { Image } from "astro:assets"
+
+// IMPORT ICONS
+import AngularIcon from "../components/icons/Angular.astro"
+import NgrxIcon from "../components/icons/Ngrx.astro"
+import AngularMaterialIcon from "../components/icons/Angular-material.astro"
+import CloudinaryIcon from "../components/icons/Cloudinary.astro"
+import NodejsIcon from "../components/icons/Nodejs.astro"
+import ExpressjsIcon from "../components/icons/Expressjs.astro"
+import MysqlIcon from "../components/icons/Mysql.astro"
+import GithubIcon from "../components/icons/Github.astro"
+import GoToWebIcon from "../components/icons/GoToWeb.astro"
+import PythonIcon from "../components/icons/Python.astro"
+import FlaskIcon from "../components/icons/Flask.astro"
+import MongodbIcon from "../components/icons/Mongodb.astro"
+import ScikitLearnIcon from "../components/icons/Scikit.astro"
+import VmnwareIcon from "../components/icons/Vmnware.astro"
+import ZimbraIcon from "../components/icons/Zimbra.astro"
+import IonicIcon from "../components/icons/Ionic.astro"
+import PhpIcon from "../components/icons/Php.astro"
+
+// IMPORT IMAGES OF PROJECTS
+import MedicineProject from "../assets/img/MedicineProject.png"
+import DashboardProject from "../assets/img/DashboardProject.png"
+import SpamDetectorProject from "../assets/img/SpamDetectorProject.png"
+import PetroliumProject from "../assets/img/PetroliumProject.png"
+import GenericProject from "../assets/img/Generic.png"
+---
+
+<section id="proyectos">
+    <h2 class="text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+        Proyectos
+    </h2>
+    <div class="flex flex-wrap justify-evenly gap-5 py-14">
+        <article
+            class="project w-full flex flex-col h-auto justify-evenly border rounded-3xl p-4 sm:w-2/5 md:w-10/12 lg:w-2/5"
+            style="border: 0.1rem solid #303032;"
+        >
+            <h3 class="text-xl text-center text-slate-300 mb-4">
+                Web citas médicas
+            </h3>
+
+            <Image
+                src={MedicineProject}
+                alt="Screenshot of Web citas médicas project"
+                class="w-full h-60 object-cover rounded-2xl mb-4"
+                loading="lazy"
+            />
+
+            <p class="text-slate-400 mb-2 text-sm">
+                Permite gestionar citas médicas con la interacción de dos
+                roles(Paciente y doctor), donde el paciente puede tener el
+                Historial de una cita.
+            </p>
+            <div class="mb-4">
+                <h5 class="text-slate-300 mb-2">Módulos principales</h5>
+                <ul class="module-list list-disc text-slate-400 text-sm">
+                    <li>Autenticación</li>
+                    <li>Registro de citas</li>
+                    <li>Modificar citas pendientes</li>
+                    <li>Historial clínico en pdf</li>
+                    <li>Autenticación</li>
+                    <li>Atender citas</li>
+                    <li>Citas Atendidas</li>
+                </ul>
+            </div>
+
+            <div class="flex flex-row justify-between">
+                <!-- Icons of technologies used -->
+                <div
+                    class="flex items-center flex-wrap h-auto gap-3 w-7/12 sm:w-11/12 lg:w-8/12"
+                >
+                    <AngularIcon class="icon-angular w-6 h-6" />
+
+                    <NgrxIcon class="icon-ngrx w-6 h-6" />
+
+                    <AngularMaterialIcon
+                        class="icon-angular-material w-6 h-6"
+                    />
+
+                    <CloudinaryIcon class="icon-cloudinary w-6 h-6" />
+
+                    <NodejsIcon class="icon-nodejs w-6 h-6" />
+
+                    <ExpressjsIcon
+                        class="icon-express w-6 h-6 mt-3 sm:mt-6 lg:mt-4 xl:mt-5"
+                    />
+
+                    <MysqlIcon class="icon-mysql w-9 h-9" />
+                </div>
+                <!-- Icons of resources -->
+                <div class="sources items-center flex flex-row gap-3">
+                    <div class="tooltip text-slate-500 icon-resource">
+                        <GithubIcon class="w-7 h-7" />
+
+                        <div class="flex">
+                            <div
+                                class="tooltiptext p-2 gap-1 flex flex-row justify-around"
+                            >
+                                <a
+                                    class="text-xs text-slate-300"
+                                    href="https://github.com/BryanSoria593/CitasMedicas-Frontend"
+                                    target="_blank"
+                                    aria-label="Link to Frontend repository"
+                                >
+                                    Frontend
+                                </a>
+                                <div class="border-r-2 border-slate-500"></div>
+                                <a
+                                    class="text-xs text-slate-300"
+                                    href="https://github.com/BryanSoria593/CitasMedicas-Backend"
+                                    target="_blank"
+                                    aria-label="Link to Backend repository"
+                                >
+                                    Backend
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        href="https://app-citas-medicas-f9d3b.web.app/auth/login"
+                        target="_blank"
+                        class="text-slate-500 icon-resource"
+                        aria-label="Link to Web citas médicas"
+                    >
+                        <GoToWebIcon class="w-7 h-7" />
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article
+            class="project w-full flex flex-col h-auto justify-evenly border rounded-3xl p-4 sm:w-2/5 md:w-10/12 lg:w-2/5"
+            style="border: 1px solid #303032;"
+        >
+            <h3 class="text-xl text-center text-slate-300 mb-4">
+                Dashboard de detección de spam
+            </h3>
+
+            <Image
+                src={DashboardProject}
+                alt="Screenshot of dashboard project for spam detected"
+                class="w-full h-60 object-cover rounded-2xl mb-4"
+                loading="lazy"
+            />
+
+            <p class="text-slate-400 mb-2 text-sm">
+                Este proyecto presenta datos estadísticos en gráficos sobre los
+                correos detectados como spam y ham por el algoritmo del servicio
+                de Zimba,
+                <a
+                    target="_blank"
+                    class="text-slate-300 hover:text-yellow-200 transition duration-300 ease-in-out transform hover:scale-105"
+                    href="https://github.com/BryanSoria593/agent-spam-detector"
+                >
+                    agente-spam-detect</a
+                >.
+            </p>
+            <div class="mb-4">
+                <h5 class="text-slate-300 mb-2">Módulos principales</h5>
+                <ul class="module-list list-disc text-slate-400 text-sm">
+                    <li>Autenticación</li>
+                    <li>Dashboard</li>
+                    <li>Historial de correos reportados como spam</li>
+                    <li>Filtrar usuarios spammers</li>
+                    <li>Reportes en PDF y Excel</li>
+                </ul>
+            </div>
+
+            <!-- Icons of technologies used -->
+            <div class="flex flex-row justify-between">
+                <div
+                    class="flex items-center flex-wrap h-auto gap-3 w-7/12 sm:w-11/12 lg:w-8/12"
+                >
+                    <AngularIcon class="icon-angular w-6 h-6" />
+
+                    <AngularMaterialIcon
+                        class="icon-angular-material w-6 h-6"
+                    />
+
+                    <NgrxIcon class="icon-ngrx w-6 h-6" />
+
+                    <PythonIcon class="icon-python w-6 h-6" />
+
+                    <FlaskIcon class="icon-flask w-6 h-6" />
+
+                    <MongodbIcon class="icon-mongodb w-12 h-12" />
+                </div>
+
+                <!-- Icons of resources -->
+                <div class="sources">
+                    <div class="tooltip text-slate-500 icon-resource">
+                        <GithubIcon class="w-7 h-7" />
+                        <div
+                            class="tooltiptext flex flex-col p-2 gap-1 sm:flex-row"
+                        >
+                            <a
+                                class="text-xs text-slate-300"
+                                href="https://github.com/BryanSoria593/dashboard-spam-detector"
+                                target="_blank"
+                                aria-label="Link to Frontend repository"
+                            >
+                                Frontend
+                            </a>
+                            <div class="border-r-2 border-slate-500"></div>
+                            <a
+                                class="text-xs text-slate-300"
+                                href="https://github.com/BryanSoria593/backend-spam-detector"
+                                target="_blank"
+                                aria-label="Link to Backend repository"
+                            >
+                                Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article
+            class="project w-full flex flex-col h-auto justify-evenly border rounded-3xl p-4 sm:w-2/5 md:w-10/12 lg:w-2/5"
+            style="border: 1px solid #303032;"
+        >
+            <h3 class="text-xl text-center text-slate-300 mb-4">
+                Algoritmo detector de correos spam
+            </h3>
+
+            <Image
+                src={SpamDetectorProject}
+                alt="Screenshot of dashboard project for spam detected"
+                class="w-full h-60 object-cover rounded-2xl mb-4"
+                loading="lazy"
+            />
+
+            <p class="text-slate-400 mb-2 text-sm">
+                Este algoritmo detecta los correos spam y ham en el servicio de
+                email
+                <a
+                    target="_blank"
+                    class="text-slate-300 hover:text-yellow-200 transition duration-300 ease-in-out transform hover:scale-105"
+                    href="https://www.zimbra.com/"
+                >
+                    Zimbra</a
+                >, removiéndolos de la bandeja de entrada hacia la de spam y
+                enviarle una notificación de reporte al usuario.
+            </p>
+            <div class="mb-4">
+                <h5 class="text-slate-300 mb-2">Módulos principales</h5>
+                <ul class="module-list list-disc text-slate-400 text-sm">
+                    <li>Monitoreo en tiempo real</li>
+                    <li>Implementación de algoritmo Random Forest</li>
+                </ul>
+            </div>
+            <div class="flex flex-row justify-between">
+                <div
+                    class="flex items-center flex-wrap h-auto gap-3 w-7/12 sm:w-11/12 lg:w-8/12"
+                >
+                    <PythonIcon class="icon-python w-6 h-6" />
+
+                    <ScikitLearnIcon class="icon-scikit-learn w-8 h-8" />
+
+                    <VmnwareIcon class="icon-vmnware w-8 h-8" />
+
+                    <ZimbraIcon class="icon-zimbra w-10 h-10" />
+
+                    <MongodbIcon class="icon-mongodb w-12 h-12" />
+                </div>
+
+                <div
+                    class="sources items-center justify-center flex flex-row gap-3"
+                >
+                    <div class="tooltip text-slate-500 icon-resource">
+                        <a
+                            href="https://github.com/BryanSoria593/agent-spam-detector/"
+                            target="_blank"
+                            aria-label="Link to Github repository"
+                        >
+                            <GithubIcon class="w-7 h-7" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article
+            class="project w-full flex flex-col h-auto justify-evenly border rounded-3xl p-4 sm:w-2/5 md:w-10/12 lg:w-2/5"
+            style="border: 1px solid #303032;"
+        >
+            <h3 class="text-lg text-center text-slate-300 mb-4">
+                Herramienta de ingeniería para cálculo de tuberías
+            </h3>
+
+            <Image
+                src={PetroliumProject}
+                alt="Screenshot of petrolium project"
+                class="w-full h-60 object-cover rounded-2xl mb-4"
+                loading="lazy"
+            />
+
+            <p class="text-slate-400 mb-2 text-sm">
+                Realiza varios cálculos de mecánica de fluidos para tuberías
+                utilizando las ecuaciones de Colebrook-White y Darcy-Weisbach,
+                así como sus diagramas de flujo.
+            </p>
+            <div class="mb-4">
+                <h5 class="text-slate-300 mb-2">Módulos principales</h5>
+                <ul class="module-list list-disc text-slate-400 text-sm">
+                    <li>Comprobación de diseño de tuberías</li>
+                    <li>Cálculo de factor de fricción</li>
+                    <li>Cálculo de potencia de tuberías</li>
+                    <li>Cálculo de diseño de tuberías simples</li>
+                </ul>
+            </div>
+
+            <div class="flex flex-row justify-between">
+                <div
+                    class="flex items-center flex-wrap h-auto gap-3 w-7/12 sm:w-11/12 lg:w-8/12"
+                >
+                    <PythonIcon class="icon-python w-6 h-6" />
+                </div>
+
+                <div
+                    class="sources items-center justify-center flex flex-row gap-3"
+                >
+                    <div class="tooltip text-slate-500 icon-resource">
+                        <GithubIcon class="w-7 h-7" />
+                        <div class="flex">
+                            <div
+                                class="tooltiptext p-2 gap-1 flex flex-row justify-around"
+                            >
+                                <a
+                                    class="text-xs text-slate-300"
+                                    href="https://github.com/BryanSoria593/CitasMedicas-Frontend"
+                                    target="_blank"
+                                    aria-label="Link to Frontend repository"
+                                >
+                                    Frontend
+                                </a>
+                                <div class="border-r-2 border-slate-500"></div>
+                                <a
+                                    class="text-xs text-slate-300"
+                                    href="https://github.com/BryanSoria593/CitasMedicas-Backend"
+                                    target="_blank"
+                                    aria-label="Link to Backend repository"
+                                >
+                                    Backend
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        href="https://app-citas-medicas-f9d3b.web.app/auth/login"
+                        target="_blank"
+                        class="text-slate-500 icon-resource"
+                        aria-label="Link to Web citas médicas"
+                    >
+                        <GoToWebIcon class="w-7 h-7" />
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article
+            class="project w-full flex flex-col h-auto justify-evenly border rounded-3xl p-4 sm:w-2/5 md:w-10/12 lg:w-2/5"
+            style="border: 1px solid #303032;"
+        >
+            <h3 class="text-lg text-center text-slate-300 mb-4">
+                App móvil Citas médicas
+            </h3>
+
+            <Image
+                src={GenericProject}
+                alt="Screenshot of petrolium project"
+                class="w-full h-60 object-cover rounded-2xl mb-4"
+                loading="lazy"
+            />
+
+            <p class="text-slate-400 mb-2 text-sm">
+                Permite gestionar citas médicas con la interacción de dos
+                roles(Paciente y doctor), donde el paciente puede tener el
+                Historial de una cita.
+            </p>
+            <div class="mb-4">
+                <h5 class="text-slate-300 mb-2">Módulos principales</h5>
+                <ul class="module-list list-disc text-slate-400 text-sm">
+                    <li>Autenticación</li>
+                    <li>Registro de citas</li>
+                    <li>Modificar citas pendientes</li>
+                    <li>Historial clínico en pdf</li>
+                    <li>Autenticación</li>
+                    <li>Atender citas</li>
+                    <li>Citas Atendidas</li>
+                </ul>
+            </div>
+
+            <div class="flex flex-row justify-between">
+                <div
+                    class="flex items-center flex-wrap h-auto gap-3 w-7/12 sm:w-11/12 lg:w-8/12"
+                >
+                    <IonicIcon class="icon-ionic w-10" />
+                    <AngularIcon class="icon-angular w-6 h-6" />
+                    <PhpIcon class="icon-php w-8 h-8" />
+                    <MysqlIcon class="icon-mysql w-9 h-9" />
+                </div>
+
+                <!-- Icons of resources -->
+                <div class="sources">
+                    <div class="tooltip text-slate-500 icon-resource">
+                        <GithubIcon class="w-7 h-7" />
+                        <div
+                            class="tooltiptext flex flex-col p-2 gap-1 sm:flex-row"
+                        >
+                            <a
+                                class="text-xs text-slate-300"
+                                href="https://github.com/BryanSoria593/citas-medicas-ionic-angular"
+                                target="_blank"
+                                aria-label="Link to Frontend repository"
+                            >
+                                Frontend
+                            </a>
+                            <div class="border-r-2 border-slate-500"></div>
+                            <a
+                                class="text-xs text-slate-300"
+                                href="https://github.com/BryanSoria593/citas-medicas-php"
+                                target="_blank"
+                                aria-label="Link to Backend repository"
+                            >
+                                Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+    svg {
+        transition: filter 0.2s ease-in-out;
+    }
+
+    .module-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 7rem;
+        padding-left: 0.9rem;
+        gap: 0.2rem;
+    }
+
+    .sources svg:hover {
+        filter: drop-shadow(0 0 5px rgba(185, 179, 179, 0.7));
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        background-color: #333;
+        visibility: hidden;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 52%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltiptext a {
+        display: block;
+        transition:
+            color 0.3s ease,
+            text-shadow 0.3s ease;
+    }
+
+    .tooltiptext a:hover {
+        color: #f7df1e;
+        text-shadow: 0 0 10px rgba(255, 255, 236, 0.7);
+    }
+
+    .project {
+        background: linear-gradient(to bottom, #252636, #202130, #19191c);
+    }
+</style>

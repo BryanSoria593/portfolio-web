@@ -1,0 +1,26 @@
+---
+import LinkedinIcon from "./icons/Linkedin.astro"
+import MailIcon from "./icons/Mail.astro"
+
+const { iconClass, sectionClass } = Astro.props
+---
+
+<section class=`${sectionClass}`>
+    <a
+        href="mailto:zansoriam@gmail.com"
+        target="_blank"
+        class="mt-1 mail-icon text-red-400"
+        aria-label="Mail"
+    >
+        <MailIcon class=`mail-icon ${iconClass}` />
+    </a>
+
+    <a
+        href="https://linkedin.com/in/bryan-soriam/"
+        target="_blank"
+        class="linkedin-icon text-blue-400"
+        aria-label="Linkedin"
+    >
+        <LinkedinIcon class=`linkedin-icon ${iconClass}` />
+    </a>
+</section>

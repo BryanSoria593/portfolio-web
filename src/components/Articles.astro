@@ -1,0 +1,57 @@
+---
+import AngularIcon from "../components/icons/Angular.astro"
+import AwsIcon from "../components/icons/Aws.astro"
+
+const articles = [
+    {
+        title: "Aprende cómo proteger una instancia de EC2 y asegurar tu infraestructura en la nube",
+        description: `Durante mis primeros pasos en el aprendizaje de AWS con EC2, cometí un error al no comprender completamente 
+        las opciones disponibles de las instancias. Inadvertidamente, seleccioné Terminar instancia sin comprender las 
+        consecuencias, lo que resultó en la eliminación completa de la máquina y todos sus recursos asociados. 
+        Este incidente provocó una preocupación adicional, ya que estaba utilizando la capa gratuita y temí que 
+        esta se hubiera agotado.`,
+        icon: AwsIcon,
+        href: "https://medium.com/@zansoriam/aprende-c%C3%B3mo-proteger-una-instancia-de-ec2-y-asegurar-tu-infraestructura-en-la-nube-6d09b99d1dab",
+    },
+    {
+        title: "NgRx en Angular: Aprende con un ejemplo Práctico",
+        description: `Aprenderás a integrar NgRx en tu aplicación Angular, a través de una aplicación completa de tareas que 
+        contiene tanto Frontend y Backend. Exploraremos los fundamentos de NgRx para gestionar el estado de la 
+        aplicación de manera eficiente, brindándote una comprensión sólida de cómo implementar esta potente 
+        herramienta en tus propios proyectos.`,
+        icon: AngularIcon,
+        href: "https://medium.com/@zansoriam/ngrx-en-angular-aprende-con-un-ejemplo-pr%C3%A1ctico-5c8da520a7e2",
+    },
+]
+---
+
+<div id="articulos">
+    <h2 class="text-3xl font-semibold text-white">Artículos</h2>
+
+    {
+        articles.map((article) => (
+            <div class="py-6 w-full flex flex-row gap-10">
+                <div class="flex items-start">
+                    <article.icon class="w-12 h-12 sm:w-16 sm:h-16" />
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-xl sm:text-3xl text-yellow-500">
+                        <a
+                            href={article.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-yellow-700 transition-colors duration-500"
+                        >
+                            {article.title}
+                        </a>
+                    </h3>
+
+                    <p class="text-slate-300 w-full text-sm sm:text-base sm:w-11/12">
+                        {article.description}
+                    </p>
+                </div>
+            </div>
+        ))
+    }
+</div>
