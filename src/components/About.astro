@@ -3,44 +3,73 @@ import Icons from "./Icons.astro"
 ---
 
 <section
-	class="min-h-screen justify-center flex flex-col w-full gap-5"
-	id="inicio"
+    id="inicio"
+    class="h-screen flex flex-col justify-center items-center px-4 text-center max-w-3xl mx-auto"
 >
-	<h1 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text">
-		Bryan Soria Méndez
-	</h1>
-	<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-red-500">
-		Desarrollador de software
-	</h2>
+    <div class="space-y-4 flex flex-col items-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in">
+            Bryan Soria Méndez
+        </h1>
 
-	<p
-		class="text-slate-400 flex flex-col gap-4 w-full
-		text-xs sm:text-base
-		sm:w-3/4 md:w-9/12 lg:w-8/12 xl:w-6/12"
-	>
-		Tengo un año de experiencia como freelance en aplicaciones web, móviles
-		y de escritorio híbridas. Cada vez que aprendo algo nuevo y complejo de
-		entender, lo escribo en artículos para explicar esos conceptos de manera
-		más sencilla para los demás ✍️.
-		<span>
-			Actualmente, estoy estudiando cloud con AWS y mejorando mi nivel de
-			inglés.
-		</span>
-	</p>
-	<Icons
-		sectionClass="flex justify-start items-center gap-4 mt-4"
-		iconClass="w-7 sm:w-8"
-	/>
+        <h2 class="text-[clamp(1.2rem,3vw,2rem)] font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in delay-200">
+            Desarrollador de software
+        </h2>
+
+        <div class="bg-slate-900/70 backdrop-blur-sm p-4 rounded-xl border border-slate-700/50 shadow-md animate-slide-up">
+            <p class="text-slate-300 text-[clamp(0.9rem,2vw,1.1rem)] leading-relaxed">
+                Tengo un año de experiencia como freelance en aplicaciones web, móviles y de escritorio híbridas. 
+                Cada vez que aprendo algo nuevo y complejo de entender, lo escribo en artículos para explicar esos conceptos de manera más sencilla para los demás ✍️.
+            </p>
+        </div>
+
+        <Icons
+            sectionClass="flex justify-center items-center gap-4 animate-fade-in delay-400"
+            iconClass="w-[clamp(1.8rem,4vw,2rem)] h-[clamp(1.8rem,4vw,2rem)] hover:scale-110 transition-transform duration-200"
+        />
+
+        <a 
+            href="https://drive.google.com/file/d/1uTVbDWVizg0t_fC8lDNEg3qcRxqERuyD/view?usp=drive_link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="cv-btn flex items-center gap-2 mt-3"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+            </svg>
+            Abrir CV
+        </a>
+
+    </div>
 </section>
 
 <style>
-	h2 {
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	}
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-400 { animation-delay: 0.4s; }
 
-	.gradient-text {
-		background: linear-gradient(to bottom, #fcfcfd, #6f7275);
-		background-clip: text;
-		color: transparent;
-	}
+    @keyframes slideUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-up { animation: slideUp 0.9s ease-out forwards; }
+
+    .cv-btn {
+        background: linear-gradient(90deg, #6d28d9, #db2777);
+        color: white;
+        font-weight: 700;
+        padding: 10px 24px;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-size: clamp(0.9rem,2vw,1rem);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        transition: all 0.3s ease;
+    }
+    .cv-btn:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 5px 16px rgba(0,0,0,0.6);
+    }
 </style>

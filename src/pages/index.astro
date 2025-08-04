@@ -9,7 +9,8 @@ import Contact from "../components/Contact.astro"
 ---
 
 <Layout title="Home">
-	<section class="flex flex-col w-full px-4 mx-auto md:px-0 md:w-10/12">
+	<section class="flex flex-col w-full px-4 mx-auto md:px-0 md:w-10/12 mb-28">
+
 		<About />
 		<Experience />
 		<Projects />
@@ -26,7 +27,8 @@ import Contact from "../components/Contact.astro"
 			iconClass="w-32 sm:w-24 transition-transform duration-200 hover:scale-110"
 		/>
 	</section>
-	<footer class="flex items-center justify-center m-10">
+	<footer class="fixed bottom-[2px] left-1/2 -translate-x-1/2 z-50">
 		<Menu />
 	</footer>
+
 </Layout>
