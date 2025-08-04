@@ -1,0 +1,46 @@
+---
+import AngularIcon from "../components/icons/Angular.astro"
+import NgrxIcon from "../components/icons/Ngrx.astro"
+import AngularMaterialIcon from "../components/icons/Angular-material.astro"
+import NodejsIcon from "../components/icons/Nodejs.astro"
+import MysqlIcon from "../components/icons/Mysql.astro"
+import GithubIcon from "../components/icons/Github.astro"
+import PythonIcon from "../components/icons/Python.astro"
+import FlaskIcon from "../components/icons/Flask.astro"
+import MongodbIcon from "../components/icons/Mongodb.astro"
+import IonicIcon from "../components/icons/Ionic.astro"
+import PhpIcon from "../components/icons/Php.astro"
+import Net from "../components/icons/Net.astro"
+import SqlServer from "../components/icons/SqlServer.astro"
+
+const icons = [
+  { iconName: AngularIcon },
+  { iconName: NodejsIcon },
+  { iconName: IonicIcon },
+  { iconName: PythonIcon },
+  { iconName: FlaskIcon },
+  { iconName: PhpIcon },
+  { iconName: MysqlIcon },
+  { iconName: MongodbIcon },
+  { iconName: GithubIcon },
+  { iconName: NgrxIcon },
+  { iconName: AngularMaterialIcon },
+  { iconName: Net },
+  { iconName: SqlServer },
+]
+---
+
+<section id="skills">
+  <h2 class="text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+    Skills
+  </h2>
+  <div class="flex flex-wrap justify-center gap-5 my-10">
+    {icons.map(({ iconName: IconComponent }) => (
+      <div
+        class="flex items-center justify-center w-20 h-20 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-transform transform hover:scale-110"
+      >
+        <IconComponent class="w-14 h-14" />
+      </div>
+    ))}
+  </div>
+</section>
