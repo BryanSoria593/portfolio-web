@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets"
 
 // IMPORT ICONS
 import AngularIcon from "../components/icons/Angular.astro"
@@ -19,13 +18,6 @@ import VmnwareIcon from "../components/icons/Vmnware.astro"
 import ZimbraIcon from "../components/icons/Zimbra.astro"
 import IonicIcon from "../components/icons/Ionic.astro"
 import PhpIcon from "../components/icons/Php.astro"
-
-// IMPORT IMAGES OF PROJECTS
-import MedicineProject from "../assets/img/MedicineProject.png"
-import DashboardProject from "../assets/img/DashboardProject.png"
-import SpamDetectorProject from "../assets/img/SpamDetectorProject.png"
-import PetroliumProject from "../assets/img/PetroliumProject.png"
-import GenericProject from "../assets/img/Generic.png"
 ---
 
 <section id="proyectos">
@@ -41,12 +33,10 @@ import GenericProject from "../assets/img/Generic.png"
                 Web citas médicas
             </h3>
 
-            <Image
-                src={MedicineProject}
-                alt="Screenshot of Web citas médicas project"
-                class="w-full h-60 object-cover rounded-2xl mb-4"
-                loading="lazy"
-            />
+            <picture>
+                <source type="image/avif" srcset="/assets/img/MedicineProject-400.avif 400w, /assets/img/MedicineProject-800.avif 800w, /assets/img/MedicineProject-1200.avif 1200w" sizes="(max-width:600px) 100vw, 600px" />
+                <img src="/assets/img/MedicineProject-800.avif" alt="Screenshot of Web citas médicas project" width="1200" height="800" class="w-full h-60 object-cover rounded-2xl mb-4" loading="lazy" />
+            </picture>
 
             <p class="text-slate-400 mb-2 text-sm">
                 Permite gestionar citas médicas con la interacción de dos
@@ -136,12 +126,10 @@ import GenericProject from "../assets/img/Generic.png"
                 Dashboard de detección de spam
             </h3>
 
-            <Image
-                src={DashboardProject}
-                alt="Screenshot of dashboard project for spam detected"
-                class="w-full h-60 object-cover rounded-2xl mb-4"
-                loading="lazy"
-            />
+            <picture>
+                <source type="image/avif" srcset="/assets/img/DashboardProject-400.avif 400w, /assets/img/DashboardProject-800.avif 800w, /assets/img/DashboardProject-1200.avif 1200w" sizes="(max-width:600px) 100vw, 600px" />
+                <img src="/assets/img/DashboardProject-800.avif" alt="Screenshot of dashboard project for spam detected" width="1200" height="800" class="w-full h-60 object-cover rounded-2xl mb-4" loading="lazy" />
+            </picture>
 
             <p class="text-slate-400 mb-2 text-sm">
                 Este proyecto presenta datos estadísticos en gráficos sobre los
@@ -222,12 +210,10 @@ import GenericProject from "../assets/img/Generic.png"
                 Algoritmo detector de correos spam
             </h3>
 
-            <Image
-                src={SpamDetectorProject}
-                alt="Screenshot of dashboard project for spam detected"
-                class="w-full h-60 object-cover rounded-2xl mb-4"
-                loading="lazy"
-            />
+            <picture>
+                <source type="image/avif" srcset="/assets/img/SpamDetectorProject-400.avif 400w, /assets/img/SpamDetectorProject-800.avif 800w, /assets/img/SpamDetectorProject-1200.avif 1200w" sizes="(max-width:600px) 100vw, 600px" />
+                <img src="/assets/img/SpamDetectorProject-800.avif" alt="Screenshot of dashboard project for spam detected" width="1200" height="800" class="w-full h-60 object-cover rounded-2xl mb-4" loading="lazy" />
+            </picture>
 
             <p class="text-slate-400 mb-2 text-sm">
                 Este algoritmo detecta los correos spam y ham en el servicio de
@@ -287,12 +273,10 @@ import GenericProject from "../assets/img/Generic.png"
                 Herramienta de ingeniería para cálculo de tuberías
             </h3>
 
-            <Image
-                src={PetroliumProject}
-                alt="Screenshot of petrolium project"
-                class="w-full h-60 object-cover rounded-2xl mb-4"
-                loading="lazy"
-            />
+            <picture>
+                <source type="image/avif" srcset="/assets/img/PetroliumProject-400.avif 400w, /assets/img/PetroliumProject-800.avif 800w, /assets/img/PetroliumProject-1200.avif 1200w" sizes="(max-width:600px) 100vw, 600px" />
+                <img src="/assets/img/PetroliumProject-800.avif" alt="Screenshot of petrolium project" width="1200" height="800" class="w-full h-60 object-cover rounded-2xl mb-4" loading="lazy" />
+            </picture>
 
             <p class="text-slate-400 mb-2 text-sm">
                 Realiza varios cálculos de mecánica de fluidos para tuberías
@@ -340,12 +324,10 @@ import GenericProject from "../assets/img/Generic.png"
                 App móvil Citas médicas
             </h3>
 
-            <Image
-                src={GenericProject}
-                alt="Screenshot of petrolium project"
-                class="w-full h-60 object-cover rounded-2xl mb-4"
-                loading="lazy"
-            />
+            <picture>
+                <source type="image/avif" srcset="/assets/img/Generic-400.avif 400w, /assets/img/Generic-800.avif 800w, /assets/img/Generic-1200.avif 1200w" sizes="(max-width:600px) 100vw, 600px" />
+                <img src="/assets/img/Generic-800.avif" alt="Screenshot of petrolium project" width="1200" height="800" class="w-full h-60 object-cover rounded-2xl mb-4" loading="lazy" />
+            </picture>
 
             <p class="text-slate-400 mb-2 text-sm">
                 Permite gestionar citas médicas con la interacción de dos
