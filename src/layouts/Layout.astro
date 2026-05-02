@@ -11,19 +11,33 @@ const { title } = Astro.props
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>{title ? `${title} | Bryan Soria — Portafolio` : 'Bryan Soria — Portafolio'}</title>
-		<meta name="description" content="Portafolio de Bryan Soria — desarrollador de software especializado en aplicaciones web y móviles (Angular, Ionic, .NET). Proyectos, artículos técnicos y contacto profesional." />
+		<title>{title ? `${title} | Bryan Soria — Full Stack Developer` : 'Bryan Soria — Full Stack Developer'}</title>
+		<meta name="description" content="Full Stack Developer — Angular, Ionic, React Native y .NET. Especialista en ERP y apps móviles offline-first para agroindustria. Contrata soluciones empresariales." />
 		<link rel="canonical" href="https://basm-web.vercel.app/" />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title ? `${title} | Bryan Soria — Portafolio` : 'Bryan Soria — Portafolio'} />
-		<meta property="og:description" content="Portafolio de Bryan Soria — desarrollador de software especializado en aplicaciones web y móviles (Angular, Ionic, .NET)." />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:title" content={title ? `${title} | Bryan Soria — Full Stack Developer` : 'Bryan Soria — Full Stack Developer'} />
+		<meta property="og:description" content="Full Stack Developer — Angular, Ionic, React Native y .NET. Especialista en ERP y apps móviles offline-first para agroindustria." />
 		<meta property="og:url" content="https://basm-web.vercel.app/" />
-		<meta property="og:image" content="https://basm-web.vercel.app/assets/img/hero-share.png" />
+		<meta property="og:image" content="https://basm-web.vercel.app/assets/img/hero-share-1200x630.svg" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet" />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" />
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+		<link rel="preload" as="image" href="/assets/img/hero-share-1200x630.svg" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script type="application/ld+json">
+		{`{
+		  "@context":"https://schema.org",
+		  "@type":"Person",
+		  "name":"Bryan Soria",
+		  "url":"https://basm-web.vercel.app/",
+		  "jobTitle":"Full Stack Developer",
+		  "worksFor":{"@type":"Organization","name":"Freelance / Contratista"},
+		  "sameAs":["https://github.com/BryanSoria593"]
+		}`}
+		</script>
 	</head>
 	<body>
 		<a class="skip-link sr-only" href="#main">Saltar al contenido</a>
