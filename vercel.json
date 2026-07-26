@@ -2,5 +2,5 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "framework": "astro",
-  "installCommand": "corepack enable && pnpm install --frozen-lockfile"
+  "installCommand": "corepack enable && corepack prepare pnpm@11.17.0 --activate && pnpm install --frozen-lockfile"
 }
