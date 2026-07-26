@@ -28,16 +28,16 @@ importers:
         version: 5.9.3
     devDependencies:
       '@testing-library/dom':
-        specifier: ^10.4.1
+        specifier: 10.4.1
         version: 10.4.1
       '@testing-library/jest-dom':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@testing-library/dom@10.4.1)
       jsdom:
-        specifier: ^29.1.1
+        specifier: 29.1.1
         version: 29.1.1
       vitest:
-        specifier: ^3.2.7
+        specifier: 3.2.7
         version: 3.2.7(@types/debug@4.1.13)(jiti@1.21.7)(jsdom@29.1.1)(lightningcss@1.33.0)(yaml@2.9.0)
 
 packages:
