@@ -1,5 +1,6 @@
 ---
 import Icons from "./Icons.astro"
+import CvDownload from "./icons/CvDownload.astro"
 ---
 
 <section
@@ -11,30 +12,29 @@ import Icons from "./Icons.astro"
             Bryan Soria Méndez
         </h1>
 
-        <h2 class="text-[clamp(1.2rem,3vw,2rem)] font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in delay-200">
-            Desarrollador Full Stack — Angular · Ionic · .NET
+        <h2 class="text-[clamp(1.2rem,3vw,2rem)] font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in" style="animation-delay: 0.2s">
+            Full Stack Engineer — .NET · Angular · Ionic · React Native
         </h2>
 
         <div class="bg-slate-900/70 backdrop-blur-sm p-4 rounded-xl border border-slate-700/50 shadow-md animate-slide-up">
             <p class="text-slate-300 text-[clamp(0.9rem,2vw,1.1rem)] leading-relaxed">
-                Ingeniero de software Full Stack enfocado en arquitectura de aplicaciones empresariales ERP y sistemas móviles offline-first. Experiencia desarrollando soluciones con Angular, Ionic, React Native y .NET para entornos agroindustriales, optimizando procesos operativos, disponibilidad de datos y rendimiento en condiciones de conectividad limitada.
+                Desarrollador full-stack y móvil con +3 años diseñando software empresarial de misión crítica. Me especializo en arquitecturas offline-first y seguridad avanzada — desde firma digital hasta trazabilidad de datos — para aplicaciones que deben operar sin conexión estable. He liderado el desarrollo end-to-end de plataformas móviles complejas con .NET, Angular, React Native e Ionic, integradas a infraestructura cloud, complementando ese trabajo con desarrollo backend y arquitecturas de software escalables.
             </p>
         </div>
 
         <Icons
-            sectionClass="flex justify-center items-center gap-4 animate-fade-in delay-400"
+            sectionClass="flex justify-center items-center gap-4 animate-fade-in"
+            style="animation-delay: 0.4s"
             iconClass="w-[clamp(1.8rem,4vw,2rem)] h-[clamp(1.8rem,4vw,2rem)] hover:scale-110 transition-transform duration-200"
         />
 
         <a 
-            href="https://drive.google.com/file/d/10QHlfvnCo6WMTY14I1YhzIzaWz40YiPd/view?usp=sharing" 
+            href="https://drive.google.com/file/d/10I2NW3y7iCmak56-wx-QDwXUYN_qsaZw/view?usp=share_link" 
             target="_blank" 
             rel="noopener noreferrer"
             class="cv-btn flex items-center gap-2 mt-3"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-            </svg>
+            <CvDownload class="w-5 h-5" />
             Abrir CV
         </a>
 
@@ -42,20 +42,6 @@ import Icons from "./Icons.astro"
 </section>
 
 <style>
-    @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-400 { animation-delay: 0.4s; }
-
-    @keyframes slideUp {
-        0% { opacity: 0; transform: translateY(40px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-    .animate-slide-up { animation: slideUp 0.9s ease-out forwards; }
-
     .cv-btn {
         background: linear-gradient(90deg, #6d28d9, #db2777);
         color: white;
