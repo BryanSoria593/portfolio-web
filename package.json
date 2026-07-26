@@ -24,11 +24,5 @@
     "@testing-library/jest-dom": "7.0.0",
     "jsdom": "29.1.1",
     "vitest": "3.2.7"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
   }
 }
