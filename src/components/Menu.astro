@@ -13,34 +13,40 @@ import MenuContacts from "./icons/MenuContacts.astro"
 >
     <div id="dock">
             <ul class="flex justify-center gap-4">
-            <li>
+            <li class="menu-item">
                 <a href="#inicio" aria-label="Ir a Inicio">
                     <MenuHome class="w-9 h-9 text-gray-300" />
+                    <span class="menu-label">Inicio</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a href="#experiencia" aria-label="Ir a Experiencia">
                     <MenuExperience class="w-8 h-8 text-gray-300" />
+                    <span class="menu-label">Sobre mí</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a href="#proyectos" aria-label="Ir a Proyectos">
                     <MenuProjects class="w-8 h-8 text-gray-300" />
+                    <span class="menu-label">Proyectos</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a href="#articulos" aria-label="Ir a Artículos">
                     <MenuArticles class="w-8 h-8 text-gray-300" />
+                    <span class="menu-label">Artículos</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a href="#skills">
                     <MenuSkills class="w-8 h-8 text-gray-300" />
+                    <span class="menu-label">Skills</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a href="#contactos" aria-label="Ir a Contactos">
                     <MenuContacts class="w-8 h-8 text-gray-300" />
+                    <span class="menu-label">Contactos</span>
                 </a>
             </li>
         </ul>
@@ -56,5 +62,41 @@ import MenuContacts from "./icons/MenuContacts.astro"
     #dock-container li:hover svg {
         transform: scale(1.4);
         filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+    }
+
+    .menu-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-label {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+        background: rgba(30, 30, 30, 0.95);
+        color: #e2e8f0;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .menu-item:hover .menu-label {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
     }
 </style>
