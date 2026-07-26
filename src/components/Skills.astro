@@ -1,35 +1,36 @@
 ---
-import AngularIcon from "../components/icons/Angular.astro"
-import NgrxIcon from "../components/icons/Ngrx.astro"
-import AngularMaterialIcon from "../components/icons/Angular-material.astro"
-import NodejsIcon from "../components/icons/Nodejs.astro"
-import MysqlIcon from "../components/icons/Mysql.astro"
-import GithubIcon from "../components/icons/Github.astro"
-import PythonIcon from "../components/icons/Python.astro"
-import FlaskIcon from "../components/icons/Flask.astro"
-import MongodbIcon from "../components/icons/Mongodb.astro"
-import IonicIcon from "../components/icons/Ionic.astro"
-import PhpIcon from "../components/icons/Php.astro"
-import Net from "../components/icons/Net.astro"
-import SqlServer from "../components/icons/SqlServer.astro"
-import ReactNativeIcon from "../components/icons/ReactNative.astro"
+import { skills } from "../data/skills"
+import AngularIcon from "./icons/Angular.astro"
+import NgRxIcon from "./icons/Ngrx.astro"
+import AngularMaterialIcon from "./icons/Angular-material.astro"
+import NodejsIcon from "./icons/Nodejs.astro"
+import MysqlIcon from "./icons/Mysql.astro"
+import GithubIcon from "./icons/Github.astro"
+import PythonIcon from "./icons/Python.astro"
+import FlaskIcon from "./icons/Flask.astro"
+import MongodbIcon from "./icons/Mongodb.astro"
+import IonicIcon from "./icons/Ionic.astro"
+import PhpIcon from "./icons/Php.astro"
+import Net from "./icons/Net.astro"
+import SqlServer from "./icons/SqlServer.astro"
+import ReactNativeIcon from "./icons/ReactNative.astro"
 
-const icons = [
-  { iconName: AngularIcon },
-  { iconName: NodejsIcon },
-  { iconName: IonicIcon },
-  { iconName: ReactNativeIcon },
-  { iconName: PythonIcon },
-  { iconName: FlaskIcon },
-  { iconName: PhpIcon },
-  { iconName: MysqlIcon },
-  { iconName: MongodbIcon },
-  { iconName: GithubIcon },
-  { iconName: NgrxIcon },
-  { iconName: AngularMaterialIcon },
-  { iconName: Net },
-  { iconName: SqlServer },
-]
+const iconMap: Record<string, any> = {
+    AngularIcon,
+    NgRxIcon,
+    AngularMaterialIcon,
+    NodejsIcon,
+    MysqlIcon,
+    GithubIcon,
+    PythonIcon,
+    FlaskIcon,
+    MongodbIcon,
+    IonicIcon,
+    PhpIcon,
+    Net,
+    SqlServer,
+    ReactNativeIcon,
+}
 ---
 
 <section id="skills">
@@ -37,12 +38,17 @@ const icons = [
     Skills
   </h2>
   <div class="flex flex-wrap justify-center gap-5 my-10">
-    {icons.map(({ iconName: IconComponent }) => (
-      <div
-        class="flex items-center justify-center w-20 h-20 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-transform transform hover:scale-110"
-      >
-        <IconComponent class="w-14 h-14" />
-      </div>
-    ))}
+    {skills.map(({ name, component }) => {
+      const IconComponent = iconMap[component]
+      if (!IconComponent) return null
+      return (
+        <div
+          class="flex items-center justify-center w-20 h-20 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-transform transform hover:scale-110"
+          title={name}
+        >
+          <IconComponent class="w-14 h-14" />
+        </div>
+      )
+    })}
   </div>
 </section>
