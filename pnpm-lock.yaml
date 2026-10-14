@@ -19,10 +19,10 @@ importers:
         version: 5.9.3
     devDependencies:
       jsdom:
-        specifier: ^29.1.1
+        specifier: 29.1.1
         version: 29.1.1
       vitest:
-        specifier: ^3.2.7
+        specifier: 3.2.7
         version: 3.2.7(@types/debug@4.1.13)(jiti@1.21.7)(jsdom@29.1.1)(lightningcss@1.33.0)(yaml@2.9.0)
 
 packages:
