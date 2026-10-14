@@ -1,62 +1,70 @@
 ---
+import "../styles/portfolio.css";
 interface Props {
-	title: string
+  title: string;
 }
-
-const { title } = Astro.props
+const { title } = Astro.props;
+const pageTitle = `${title} | Bryan Soria`;
+const description =
+  "Desarrollo de productos web y móviles con impacto medible. Experiencia en digitalización, software empresarial y trazabilidad.";
+const siteUrl = "https://basm-web.vercel.app/";
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Bryan Soria Méndez",
+  url: siteUrl,
+  jobTitle: "Desarrollador de productos web y móviles",
+  sameAs: [
+    "https://github.com/BryanSoria593",
+    "https://www.linkedin.com/in/bryan-soriam/",
+  ],
+};
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>{title ? `${title} | Bryan Soria — Full Stack Developer` : 'Bryan Soria — Full Stack Developer'}</title>
-		<meta name="description" content="Full Stack Developer — Angular, Ionic, React Native y .NET. Especialista en ERP y apps móviles offline-first para agroindustria. Contrata soluciones empresariales." />
-		<link rel="canonical" href="https://basm-web.vercel.app/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="es_ES" />
-		<meta property="og:title" content={title ? `${title} | Bryan Soria — Full Stack Developer` : 'Bryan Soria — Full Stack Developer'} />
-		<meta property="og:description" content="Full Stack Developer — Angular, Ionic, React Native y .NET. Especialista en ERP y apps móviles offline-first para agroindustria." />
-		<meta property="og:url" content="https://basm-web.vercel.app/" />
-		<meta property="og:image" content="https://basm-web.vercel.app/assets/img/hero-share-1200x630.svg" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" />
-		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-		<link rel="preload" as="image" href="/assets/img/hero-share-1200x630.svg" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script type="application/ld+json">
-		{`{
-		  "@context":"https://schema.org",
-		  "@type":"Person",
-		  "name":"Bryan Soria",
-		  "url":"https://basm-web.vercel.app/",
-		  "jobTitle":"Full Stack Developer",
-		  "worksFor":{"@type":"Organization","name":"Freelance / Contratista"},
-		  "sameAs":["https://github.com/BryanSoria593"]
-		}`}
-		</script>
-	</head>
-	<body>
-		<a class="skip-link sr-only" href="#main">Saltar al contenido</a>
-		<header role="banner" aria-label="Cabecera del sitio"></header>
-		<main id="main" role="main">
-			<div
-				class="absolute w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-			>
-				<slot />
-			</div>
-		</main>
-		<style is:global>
-			/* Fonts loaded via link rel preconnect in head (display=swap) */
-			* { padding: 0; margin: 0; box-sizing: border-box; }
-			html, body { font-family: "Work Sans", sans-serif; background-size: 224px; height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
-			@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-			/* Skip link styles */
-			.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-			.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; background: #000; color: #fff; padding: 8px 12px; z-index: 9999; border-radius: 4px; }
-		</style>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta
+      property="og:image"
+      content={`${siteUrl}assets/img/hero-share-1200x630.svg`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(person)}
+    />
+    <script is:inline>
+      (() => {
+        let theme;
+        try {
+          theme = localStorage.getItem("bryan-portfolio-theme");
+        } catch {}
+        document.documentElement.dataset.theme =
+          theme === "light" || theme === "dark"
+            ? theme
+            : matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Saltar al contenido
+    </a>
+    <slot />
+  </body>
 </html>

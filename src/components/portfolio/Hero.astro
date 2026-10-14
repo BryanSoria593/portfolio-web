@@ -1,0 +1,89 @@
+<section class="hero" id="inicio">
+  <div>
+    <p class="hero-name">Bryan Soria Méndez</p>
+    <h1>
+      Desarrollador de productos <em>web y móviles.</em>
+    </h1>
+    <p class="hero-technologies" aria-label="Tecnologías principales">
+      Angular · .NET · React Native · Ionic
+    </p>
+    <p class="intro">
+      Ingeniero en Tecnologías de la Información con más de 3 años desarrollando
+      soluciones empresariales web y móviles. Transformo procesos complejos en
+      productos que facilitan el trabajo, conectan información y mantienen la
+      operación incluso sin conexión. Mi enfoque combina una experiencia de uso
+      clara, datos confiables y software que puede evolucionar con el negocio.
+    </p>
+    <div class="actions">
+      <a class="btn" href="#trayectoria">
+        Ver experiencia <span>↓</span>
+      </a>
+      <a
+        class="btn"
+        href="https://drive.google.com/file/d/12mJ2mxTEFF_jxOXknRr3BM_h8h-QfBLs/view?usp=share_link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ver hoja de vida <span>↗</span>
+      </a>
+      <a
+        class="btn"
+        href="https://www.linkedin.com/in/bryan-soriam/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn <span>↗</span>
+      </a>
+    </div>
+    <div class="location mono">
+      <span>Guayaquil, Ecuador</span>
+      <span>Ingeniero en TI</span>
+    </div>
+  </div>
+  <div class="system" aria-label="Diagrama conceptual de arquitectura offline">
+    <div class="system-top mono">
+      PRODUCTO → IMPACTO <span>● OFFLINE-FIRST</span>
+    </div>
+    <h3>Del papel a la captura digital.</h3>
+    <p>
+      Una aplicación de aproximadamente 20 módulos, integrada con una plataforma
+      web y utilizada en más de 20 fincas.
+    </p>
+    <div
+      class="switch"
+      role="group"
+      aria-label="Estado de conexión del diagrama"
+    >
+      <button type="button" aria-pressed="true" data-mode="offline">
+        01 / Sin conexión
+      </button>
+      <button type="button" aria-pressed="false" data-mode="online">
+        02 / Conectado
+      </button>
+    </div>
+    <div class="flow">
+      <div class="node">
+        <span class="mono muted">INTERFAZ</span>
+        <strong>Aplicación móvil</strong>
+        <small>Interacción · Validación</small>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="node">
+        <span class="mono muted">DISPOSITIVO</span>
+        <strong>Persistencia local</strong>
+        <small>SQLite / WatermelonDB</small>
+      </div>
+    </div>
+    <div class="cloud">
+      <span>API → Servicios / Datos</span>
+      <small id="sync-state">EN ESPERA</small>
+    </div>
+    <div class="log mono" id="sync-log" aria-live="polite">
+      ↳ Datos conservados en el dispositivo.
+      <br />↳ Cola persistente hasta recuperar conexión.
+    </div>
+    <div class="system-foot mono">
+      DIAGRAMA CONCEPTUAL · NO ES UNA DEMO DEL PRODUCTO
+    </div>
+  </div>
+</section>

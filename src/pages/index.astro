@@ -1,36 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Menu from "../components/Menu.astro"
-import Projects from "../components/Projects.astro"
-import About from "../components/About.astro"
-import Experience from "../components/Experience.astro"
-import Articles from "../components/Articles.astro"
-import Contact from "../components/Contact.astro"
-import Skills from "../components/Skills.astro"
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/portfolio/Header.astro";
+import Hero from "../components/portfolio/Hero.astro";
+import Impact from "../components/portfolio/Impact.astro";
+import Work from "../components/portfolio/Work.astro";
+import Career from "../components/portfolio/Career.astro";
+import Stack from "../components/portfolio/Stack.astro";
+import Contact from "../components/portfolio/Contact.astro";
+import Interactions from "../components/portfolio/Interactions.astro";
 ---
 
-<Layout title="Portafolio">
-	<section class="flex flex-col w-full px-4 mx-auto md:px-0 md:w-10/12 mb-28">
-
-		<About />
-		<Experience />
-		<Projects />
-		<Articles />
-		<Skills />
-
-		<h2 
-			id="contactos"
-			class="text-3xl font-semibold text-white">
-			Contactos
-		</h2>
-
-		<Contact
-			sectionClass="flex justify-evenly items-center gap-4 mt-4"
-			iconClass="w-32 sm:w-24 transition-transform duration-200 hover:scale-110"
-		/>
-	</section>
-	<footer class="fixed bottom-[2px] left-1/2 -translate-x-1/2 z-50">
-		<Menu />
-	</footer>
-
+<Layout title="Desarrollo de productos web y móviles">
+  <Header />
+  <main class="wrap" id="main">
+    <Hero />
+    <Impact />
+    <Work />
+    <Career />
+    <Stack />
+  </main>
+  <Contact />
+  <Interactions />
 </Layout>
