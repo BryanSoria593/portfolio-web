@@ -1,0 +1,62 @@
+<script is:inline>
+  const themeButton = document.querySelector(".theme-toggle");
+  function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeButton.textContent =
+      theme === "dark" ? "☀ Modo claro" : "☾ Modo oscuro";
+    themeButton.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Activar modo claro" : "Activar modo oscuro",
+    );
+    themeButton.setAttribute("aria-pressed", String(theme === "dark"));
+  }
+  let savedTheme;
+  try {
+    savedTheme = localStorage.getItem("bryan-portfolio-theme");
+  } catch {}
+  setTheme(
+    savedTheme === "dark" || savedTheme === "light"
+      ? savedTheme
+      : matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light",
+  );
+  themeButton.addEventListener("click", () => {
+    const theme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    setTheme(theme);
+    try {
+      localStorage.setItem("bryan-portfolio-theme", theme);
+    } catch {}
+  });
+
+  const modeButtons = document.querySelectorAll("[data-mode]");
+  modeButtons.forEach((button) =>
+    button.addEventListener("click", () => {
+      const online = button.dataset.mode === "online";
+      modeButtons.forEach((item) =>
+        item.setAttribute("aria-pressed", String(item === button)),
+      );
+      document.getElementById("sync-state").textContent = online
+        ? "SINCRONIZACIÓN"
+        : "EN ESPERA";
+      document.getElementById("sync-log").replaceChildren();
+      const log = document.getElementById("sync-log");
+      log.append(
+        document.createTextNode(
+          online
+            ? "↳ Envío mediante API con recepción idempotente."
+            : "↳ Datos conservados en el dispositivo.",
+        ),
+      );
+      log.append(document.createElement("br"));
+      log.append(
+        document.createTextNode(
+          online
+            ? "↳ Reintentos y validación de respuesta."
+            : "↳ Cola persistente hasta recuperar conexión.",
+        ),
+      );
+    }),
+  );
+</script>

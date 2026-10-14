@@ -1,0 +1,31 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  height: number;
+}
+
+const { image, alt, height } = Astro.props;
+const base = `/assets/img/${image}`;
+---
+
+<figure class="project-preview">
+  <a
+    href={`${base}-1200.avif`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${alt}. Abrir captura completa en una pestaña nueva`}
+  >
+    <img
+      src={`${base}-800.avif`}
+      srcset={`${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w`}
+      sizes="(max-width: 680px) calc(100vw - 44px), (max-width: 1360px) 45vw, 620px"
+      width="1200"
+      height={height}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+    />
+    <span class="preview-caption">Ampliar captura ↗</span>
+  </a>
+</figure>
